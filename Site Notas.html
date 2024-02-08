@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <!-- Conteúdo do cabeçalho, como logo, menu de navegação, etc. -->
+        <h1>MODELOS DE NOTAS PARA PUBLICAÇÃO EM BOLETIM INTERNO</h1>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <!-- Conteúdo da barra lateral -->
+            <h2>Notas</h2>
+            <ul>
+                <li><a href="file:///C:/Users/bpm11/Documents/P1/NOTAS/modelosdenotas/Apresenta%C3%A7%C3%A3o%20em%20Juizo/Apresenta/Ap.%20em%20Ju%C3%ADzo.html" onclick="carregarPagina('file:///C:/Users/bpm11/Documents/P1/NOTAS/modelosdenotas/Apresenta%C3%A7%C3%A3o%20em%20Juizo/Apresenta/Ap.%20em%20Ju%C3%ADzo.html')">Apresentação em juízo</a></li>
+                 <li><a href="#" onclick="carregarPagina('#')">Apr. Local de Trab.</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Atestado Médico</a></li>
+                 <li><a href="#" onclick="carregarPagina('#')">Férias</a></li>
+                  <li><a href="#" onclick="carregarPagina('#')">Férias Sustadas</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Funções</a></li>
+                <li><a href="file:///C:/Users/bpm11/Documents/P1/NOTAS/modelosdenotas/Apresenta%C3%A7%C3%A3o%20em%20Juizo/Motorista/Motorista.html" onclick="carregarPagina('file:///C:/Users/bpm11/Documents/P1/NOTAS/modelosdenotas/Apresenta%C3%A7%C3%A3o%20em%20Juizo/Motorista/Motorista.html')">Motoristas</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Permuta de Serviço</a></li>
+                 <li><a href="#" onclick="carregarPagina('#')">Transferência interna</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Calcular Períodos</a></li>
+
+
+                <li><a href="https://alpha01abs.github.io/CalcularDatas/" onclick="carregarPagina('https://alpha01abs.github.io/CalcularDatas/')">Calculadora de datas</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-section">
+            <!-- Conteúdo principal da página -->
+            <h2>Escolha uma nota no menu ao lado</h2>
+            <p>Este site foi criado pelos membros da P/1 do 11º BPM</p>
+
+            <div id="iframeContainer"></div>
+        </section>
+    </div>
+
+     <script>
+    function carregarPagina(url) {
+        const iframeContainer = document.getElementById('iframeContainer');
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.width = '100%';
+        iframe.height = '600px'; // Ajuste conforme necessário
+
+        // Limpa o conteúdo anterior
+        iframeContainer.innerHTML = '';
+
+        // Adiciona o novo iframe ao contêiner
+        iframeContainer.appendChild(iframe);
+    }
+    </script>
+
+    <footer>
+        <!-- Conteúdo do rodapé, informações de copyright, etc. -->
+        <p>&copy; 2024 Diângeles. Todos os direitos reservados.</p>
+    </footer>
+
+   
+
+</body>
+</html>
