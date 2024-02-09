@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTORIZAÇÃO DE PERMUTA DE SERVIÇO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px; /* Adicionado para separar os botões */
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>AUTORIZAÇÃO DE PERMUTA DE SERVIÇO</h1>
+
+<form id="textoForm">
+
+    <label for="numOficio">Digite o número do ofício de origem:</label>
+    <input type="text" id="numOficio" name="numOficio" placeholder="Digite aqui o número do ofício" required>
+
+    <label for="subscreveu">Digite quem fez o ofício:</label>
+    <input type="text" id="subscreveu" name="subscreveu" placeholder="Digite aqui quem subscreveu" required>
+
+    <!-- Militar 01 -->
+    <fieldset>
+        <legend>Militar 01</legend>
+        <label for="nome1">Digite a [Grad/matrícula/nome] do primeiro militar:</label>
+        <input type="text" id="nome1" name="nome1" placeholder="Digite aqui" required>
+
+        <label for="data1">Digite o dia(s) /mês e ano em que o primeiro militar substituirá o segundo:</label>
+        <input type="text" id="data1" name="data1" placeholder="Digite aqui a data" required>
+    </fieldset>
+
+    <!-- Militar 02 -->
+    <fieldset>
+        <legend>Militar 02</legend>
+        <label for="nome2">Digite a [Grad/matrícula/nome] do segundo militar:</label>
+        <input type="text" id="nome2" name="nome2" placeholder="Digite aqui" required>
+
+        <label for="data2">Digite o dia(s) /mês e ano em que o segundo militar substituirá o primeiro:</label>
+        <input type="text" id="data2" name="data2" placeholder="Digite aqui a data" required>
+    </fieldset>
+    
+    <button type="button" onclick="gerarTexto()">Gerar Texto</button>
+    <button type="button" onclick="copiarTexto()">Copiar Texto</button>
+
+</form>
+
+<div id="resultado"></div>
+
+<script>
+    function copiarTexto() {
+        var resultado = document.getElementById("resultado");
+        var textoCopiado = document.createElement("textarea");
+        textoCopiado.value = resultado.innerText;
+        document.body.appendChild(textoCopiado);
+        textoCopiado.select();
+        document.execCommand("copy");
+        document.body.removeChild(textoCopiado);
+        alert("Texto copiado para a área de transferência!");
+    }
+
+    function gerarTexto() {
+        var data1 = document.getElementById("data1").value;
+        var data2 = document.getElementById("data2").value;
+        var nome1 = document.getElementById("nome1").value;
+        var nome2 = document.getElementById("nome2").value;
+        var numOficio = document.getElementById("numOficio").value;
+        var subscreveu = document.getElementById("subscreveu").value;
+
+        var textoGerado = `
+O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “i”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o art. 134 da Lei Estadual (PB) nº 3.909 de 14 de julho de 1977, que dispõe sobre o “Estatuto dos Policiais Militares do Estado da Paraíba”, e em atendimento ao OFÍCIO Nº ${numOficio}, subscrito pelo ${subscreveu}, RESOLVE:
+
+REGISTRAR que foram autorizadas as permutas de serviço, que antecede em comum acordo entre os militares ${nome1} e ${nome2}, conforme datas abaixo:
+
+- O ${nome1} substituirá o ${nome2} no(s) dia(s) ${data1};
+- O ${nome2} substituirá o ${nome1} no(s) dia(s) ${data2};
+
+Marcos Antônio ANASTÁCIO de Sousa - 2º TEN PM
+Chefe da P/1 do 11º BPM`;
+
+        document.getElementById("resultado").innerText = textoGerado;
+    }
+</script>
+
+
+</body>
+</html>
