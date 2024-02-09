@@ -1,66 +1,70 @@
 <!DOCTYPE html>
-<html lang="br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação de Militar em Juízo</title>
+    <title>Meu Site</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container"> 
-    <h1>Apresentação de Militar em Juízo</h1>
 
-    <p label for="dataAudiencia">Data da Audiência:</label>
-    <input type="date" id="dataAudiencia">
+    <header>
+        <!-- Conteúdo do cabeçalho, como logo, menu de navegação, etc. -->
+        <h1>MODELOS DE NOTAS PARA PUBLICAÇÃO EM BOLETIM INTERNO</h1>
+    </header>
 
-    <label for="horaAudiencia">Hora da Audiência:</label>
-    <input type="time" id="horaAudiencia"><br></p>
+    <div class="main-content">
+        <aside class="sidebar">
+            <!-- Conteúdo da barra lateral -->
+            <h2>Notas</h2>
+            <ul>
+                <li><a href="file:///C:/Users/bpm11/Documents/P1/NOTAS/modelosdenotas/Apresenta%C3%A7%C3%A3o%20em%20Juizo/Apresenta/Ap.%20em%20Ju%C3%ADzo.html" onclick="carregarPagina('file:///C:/Users/bpm11/Documents/P1/NOTAS/modelosdenotas/Apresenta%C3%A7%C3%A3o%20em%20Juizo/Apresenta/Ap.%20em%20Ju%C3%ADzo.html')">Apresentação em juízo</a></li>
+                 <li><a href="#" onclick="carregarPagina('#')">Apr. Local de Trab.</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Atestado Médico</a></li>
+                 <li><a href="#" onclick="carregarPagina('#')">Férias</a></li>
+                  <li><a href="#" onclick="carregarPagina('#')">Férias Sustadas</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Funções</a></li>
+                <li><a href="file:///C:/Users/bpm11/Documents/P1/NOTAS/modelosdenotas/Apresenta%C3%A7%C3%A3o%20em%20Juizo/Motorista/Motorista.html" onclick="carregarPagina('file:///C:/Users/bpm11/Documents/P1/NOTAS/modelosdenotas/Apresenta%C3%A7%C3%A3o%20em%20Juizo/Motorista/Motorista.html')">Motoristas</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Permuta de Serviço</a></li>
+                 <li><a href="#" onclick="carregarPagina('#')">Transferência interna</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Calcular Períodos</a></li>
 
-    <p label for="numOficio">Nº do Ofício de Requisição:</label>
-    <input type="text" id="numOficio">
 
-    <label for="dataOficio">Data:</label>
-    <input type="date" id="dataOficio"><br></p>
+                <li><a href="https://alpha01abs.github.io/CalcularDatas/" onclick="carregarPagina('https://alpha01abs.github.io/CalcularDatas/')">Calculadora de datas</a></li>
+            </ul>
+        </aside>
 
-    <label for="numProcesso">Número do Processo:</label>
-    <input type="text" id="numProcesso">
+        <section class="main-section">
+            <!-- Conteúdo principal da página -->
+            <h2>Escolha uma nota no menu ao lado</h2>
+            <p>Este site foi criado pelos membros da P/1 do 11º BPM</p>
 
-    <label for="nomeReu">Nome do Réu:</label>
-    <input type="text" id="nomeReu"><br>
-
-    <p label for="vara">Escolha a Vara:</label>
-    <select id="vara" onchange="mostrarCamposEspeciais()">
-        <option value="1ª Vara Mista da Comarca de Monteiro">1ª Vara de Monteiro</option>
-        <option value="2ª Vara Mista da Comarca de Monteiro">2ª Vara de Monteiro</option>
-        <option value="Vara Única da Comarca de Sumé">Vara de Sumé</option>
-        <option value="Vara Única da Comarca de Serra Branca">Vara de Serra Branca</option>
-        <option value=" ">Outros</option>
-    </select></p>
-    
-    <div id="outrosVara" style="display: none;">
-        <label for="outraVara">Outra Vara:</label>
-        <input type="text" id="outraVara" placeholder="Digite a Vara">
-    </div><br>
-
-    <div id="outrosComarca" style="display: none;">
-        <label for="outraComarca">Comarca:</label>
-        <input type="text" id="outraComarca" placeholder="Digite a Comarca">
-    </div><br>
-    
-
-    <button onclick="gerarTexto()">Gerar Texto</button>
-
-    <div = id="textoGerado">
-
-    <p id="textoGerado"></p>
-    
+            <div id="iframeContainer"></div>
+        </section>
     </div>
-    
-    <button id="botaoCopiar">Copiar Texto</button>
 
-  </div>
+     <script>
+    function carregarPagina(url) {
+        const iframeContainer = document.getElementById('iframeContainer');
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.width = '100%';
+        iframe.height = '600px'; // Ajuste conforme necessário
 
-    <script src="script.js"></script>
+        // Limpa o conteúdo anterior
+        iframeContainer.innerHTML = '';
+
+        // Adiciona o novo iframe ao contêiner
+        iframeContainer.appendChild(iframe);
+    }
+    </script>
+
+    <footer>
+        <!-- Conteúdo do rodapé, informações de copyright, etc. -->
+        <p>&copy; 2024 Diângeles. Todos os direitos reservados.</p>
+    </footer>
+
+   
 
 </body>
 </html>
