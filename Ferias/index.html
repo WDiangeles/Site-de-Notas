@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Férias</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <div class="container"> 
+    <h1>Notas de Férias</h1>
+
+    <p label for="tipo">Tipo de nota:</label>
+    <select id="tipo" onchange="mostrarCamposEspeciais()">
+        <option value="em branco"> </option>
+        <option value="Concessão">CONCESSÃO</option>
+        <option value="Apresentacão">APRESENTAÇÃO</option>
+        <option value="Sustacão">SUSTAÇÃO</option>
+        <option value="Sustadas">CONCESSÃO-SUSTADAS</option>
+    </select></p>
+
+    <div id="exercicios" style="display: none;">
+        <label for="exercicio">Exercicio:</label>
+        <input type="text" id="exercicio" placeholder="Digite o Ano">
+    </div><br>
+
+    <div id="data" style="display: none;">
+        <label for="start-date">Data de Início/Apresentação:</label>
+        <input type="date" id="start-date" placeholder="DD/MM/AAAA">
+    </div><br>
+
+    <div id="duracao" style="display: none;">
+        <label for="duration">Qtd. de Dias:</label>
+        <input type="number" id="duration">
+    </div><br>
+
+    <div id="biConcessao" style="display: none;">
+        <label for="bolConcessao">Concessão:</label>
+        <input type="text" id="bolConcessao" placeholder="Digite o nº e data do BOL">
+    </div><br>
+    
+    <div id="biSustacao" style="display: none;">
+        <label for="bolSustacao">Bol de Sustação:</label>
+        <input type="text" id="bolSustacao" placeholder="Digite o nº e data do BOL">
+    </div><br>
+
+    <button onclick="gerarTexto()">Gerar Texto</button></p>
+
+    <div id="conteudoGerado">
+        <div id="textoGerado">   
+            <div id="result" style="display: none;">
+                <p id="initial-date"><span></span></p>
+                <p id="final-date"><span></span></p>
+                <p id="presentation-date"><span></span></p>
+            </div>
+        </div>
+
+        <button id="botaoCopiar">Copiar Texto</button>
+
+</div>
+
+    <div id="conteudoGeradoAp">
+        <div id="textoGeradoAp"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

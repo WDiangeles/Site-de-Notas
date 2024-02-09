@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motoristas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container"> 
+    <h1>Nota Motoristas</h1>
+
+    <p label for="prefixo">Prefixo:</label>
+    <input type="text" id="prefixo">
+
+    <label for="placa">Placa:</label>
+    <input type="text" id="placa">
+
+    <label for="modelo">Modelo:</label>
+    <input type="text" id="modelo">
+
+
+    <button onclick="gerarTexto()">Gerar Texto</button></p>
+
+    <div id="conteudoGerado">
+        <div id="textoGerado"></div>
+        <button id="botaoCopiar">Copiar Texto</button>
+    </div>
+    <br>
+    <div id="conteudoGerado2">
+        <div id="textoGerado2"></div>
+        <button id="botaoCopiar2">Copiar Texto</button>
+    </div>
+    
+
+  </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
