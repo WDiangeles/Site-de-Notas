@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação de Militar em Juízo e publicação em BOL PMPB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container"> 
+    <h1>Apresentação de Militar em Juízo e publicação em BOL PMPB</h1>
+
+    <p label for="dataAudiencia">Data da Audiência:</label>
+    <input type="date" id="dataAudiencia">
+
+    <label for="horaAudiencia">Hora da Audiência:</label>
+    <input type="time" id="horaAudiencia"><br></p>
+
+    <p label for="numOficio">Nº do Ofício de Requisição:</label>
+    <input type="text" id="numOficio">
+
+    <label for="dataOficio">Data:</label>
+    <input type="date" id="dataOficio"><br></p>
+
+    <label for="numProcesso">Número do Processo:</label>
+    <input type="text" id="numProcesso">
+
+    <label for="nomeReu">Nome do Réu:</label>
+    <input type="text" id="nomeReu"><br>
+
+    <p label for="vara">Escolha a Vara:</label>
+    <select id="vara" onchange="mostrarCamposEspeciais()">
+        <option value="1ª Vara Mista da Comarca de Monteiro">1ª Vara de Monteiro</option>
+        <option value="2ª Vara Mista da Comarca de Monteiro">2ª Vara de Monteiro</option>
+        <option value="Vara Única da Comarca de Sumé">Vara de Sumé</option>
+        <option value="Vara Única da Comarca de Serra Branca">Vara de Serra Branca</option>
+        <option value=" ">Outros</option>
+    </select></p>
+    
+    <div id="outrosVara" style="display: none;">
+        <label for="outraVara">Digite a Vara e a Comarca:</label>
+        <input type="text" id="outraVara" placeholder="Digite a Vara e a Comarca">
+    </div><br>
+
+    <div id="outrosComarca" style="display: none;">
+        <label for="outraComarca">Campo de dados complementares:</label>
+        <input type="text" id="outraComarca" placeholder="Digite caso precise">
+    </div><br>
+    
+
+    <button onclick="gerarTexto()">Gerar Texto</button></p>
+
+     <div id="conteudoGerado">
+        <div id="textoGerado"></div>
+        <button id="botaoCopiar">Copiar Texto</button>
+    </div>
+    <br>
+    <div id="conteudoGerado2">
+        <div id="textoGerado2"></div>
+        <button id="botaoCopiar2">Copiar Texto</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
