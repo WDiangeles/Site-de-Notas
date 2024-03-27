@@ -120,7 +120,7 @@ REGISTRAR, que o(a) Exmo.(a) Sr.(a) Juiz(a) de Direito da ${varaSelecionada}${ou
 ${linkAudiencia}
 Telefone para contato: ${telefoneContato}
 
-(REQUISIÇÃO: OFÍCIO Nº ${numOficio}/2024 – ${varaSelecionada}${outraVaraInput.value}, datado de ${dataOficioFormatada}).
+(REQUISIÇÃO: OFÍCIO Nº ${numOficio}/2024 – ${varaSelecionada}${outraVaraInput.value}, de ${dataOficioFormatada}).
 
 PUBLIQUE-SE.
 Monteiro-PB, ${dataEmissaoFormatada}.
