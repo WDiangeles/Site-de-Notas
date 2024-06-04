@@ -182,13 +182,7 @@ Chefe da Seção de Gestão de Pessoas do 11º BPM`;
 
 
 
-    const textoGerado2 = `Exmo(a). Dr(a). Juiz(a) de Direito ${varaSelecionada}${outraVaraInput.value}
-
-Assunto: Apresentação de militar em juízo ( nome dos militares ) em ${dataAudienciaFormatada} às ${horaFormatada}.
-
-Meritíssimo(a) Juiz(a),
-
- Em cumprimento ao teor do ofício nº: ${numOficio}/2024, datado de ${dataOficioFormatada}, expedido pela ${varaSelecionada}${outraVaraInput.value}, e por ordem do Sr. MAJOR Saulo TAVARES Silva, Comandante Interino do 11º BPM, apresento a Vossa Excelência, o(s) militar(es) abaixo referenciado(s), atinente a solicitação para participar(em) de audiência, designada para o dia ${dataAudienciaFormatada}, às ${horaFormatada}, nos autos do Processo nº.: ${numProcesso}.`; 
+    const textoGerado2 = `Em cumprimento ao teor do ofício nº: ${numOficio}/2024, datado de ${dataOficioFormatada}, expedido pela ${varaSelecionada}${outraVaraInput.value}, e por ordem do Sr. MAJOR Saulo TAVARES Silva, Comandante do 11º BPM, apresento a Vossa Excelência, o(s) militar(es) abaixo referenciado(s), atinente a solicitação para participar(em) de audiência, designada para o dia ${dataAudienciaFormatada}, às ${horaFormatada}, nos autos do Processo nº.: ${numProcesso}.`; 
 
     const paragrafos2 = textoGerado2.split('\n');
     const textoFormatado2 = paragrafos2.map(paragrafo => `<p style="text-align:justify";>${paragrafo}</p>`).join('');
