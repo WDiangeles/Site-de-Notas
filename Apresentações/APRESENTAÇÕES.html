@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+<title>APRESENTAÇÕES</title>
+</head>
+<body>
+
+<h2>APRESENTAÇÕES</h2>
+
+<label for="tex01">Digite o Nome/Grad./Matrícula:</label>
+<textarea id="tex01" rows="4" cols="50"></textarea><br>
+
+<label for="tex02">Digite a subunidade:</label>
+<textarea id="tex02" rows="4" cols="50"></textarea><br>
+
+<label for="data">Data da apresentação:</label>
+<input type="date" id="data"><br>
+
+<label for="dias">Número de dias dispensado:</label>
+<input type="text" id="dias" placeholder="Ex: 02"><br>
+
+<label for="aceitar">Tipo de afastamento:</label>
+<select id="aceitar">
+  <option value="de afastamento integral para tratamento de saúde própria">de afastamento integral para tratamento de saúde própria</option>
+  <option value="de concessão de Dispensa de serviço">de concessão de Dispensa de serviço</option>
+  <option value="de concessão de Licença especial">de concessão de Licença especial</option>
+  <option value="de concessão de Licença paternidade">de concessão de Licença paternidade</option>
+  <option value="de concessão de Licença sem vencimentos">de concessão de Licença sem vencimentos</option>
+  <option value="de concessão de Férias">de concessão de Férias</option>
+</select><br><br>
+
+<button onclick="gerarTexto()">Gerar Texto</button>
+<button onclick="copiarTexto()">Copiar Texto</button>
+<button onclick="limparCampos()">Limpar Campos</button>
+
+<p id="resultado"></p>
+
+<script>
+function gerarTexto() {
+    var texto01 = document.getElementById("tex01").value;
+    var texto02 = document.getElementById("tex02").value;
+    var data = document.getElementById("data").value;
+    var dias = document.getElementById("dias").value;
+    var aceitar = document.getElementById("aceitar").value;
+    
+    // Obter a data atual
+    var dataAtual = new Date();
+    var dia = dataAtual.getDate();
+    var mes = dataAtual.getMonth() + 1;
+    var ano = dataAtual.getFullYear();
+
+    // Formatar a data atual para o formato "dd de mês de aaaa"
+    var meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    var dataCorrenteFormatada = dia + ' de ' + meses[mes - 1] + ' de ' + ano;
+    
+    // Formatar a data selecionada pelo usuário para o formato "dd/mm/aaaa"
+    var dataFormatada = data.split("-").reverse().join("/");
+    
+    var diasPorExtenso = converterParaExtenso(dias);
+    
+    var textoGerado = "O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “o”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o art. 134 da Lei Estadual (PB) nº 3.909 de 14 de julho de 1977, que dispõe sobre o “Estatuto dos Policiais Militares do Estado da Paraíba”, bem como em obediência ao que estabelece o art. 19 da Resolução n° 005/2020/GCG-CG de 27 de abril 2020, emitida pelo Exm°. Sr. Comandante Geral da PMPB, publicada no Boletim do QCG n° 0080/2020, RESOLVE:\n\nREGISTRAR a apresentação do militar " + texto01 + ", Unidade: 11º BPM|" + texto02 + ", no dia " + dataFormatada + ", após " + dias + " (" + diasPorExtenso + ") dia(s)  " + aceitar + ".\n\nPUBLIQUE-SE.\n\nMonteiro-PB, " + dataCorrenteFormatada + ".\n\nMarcos Antônio ANASTÁCIO de Sousa - 2º TEN PM\nChefe da Seção de Gestão de Pessoas - 11º BPM.";
+    
+    document.getElementById("resultado").innerText = textoGerado;
+}
+
+function copiarTexto() {
+    var resultado = document.getElementById("resultado");
+    var texto = resultado.innerText;
+
+    // Cria um elemento textarea temporário para copiar o texto
+    var tempTextArea = document.createElement("textarea");
+    tempTextArea.value = texto;
+    document.body.appendChild(tempTextArea);
+
+    // Seleciona o texto no textarea temporário
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); /* Para dispositivos móveis */
+    
+    // Copia o texto selecionado
+    document.execCommand("copy");
+
+    // Remove o textarea temporário
+    document.body.removeChild(tempTextArea);
+
+    // Exibe uma mensagem indicando que o texto foi copiado
+    alert("Texto copiado para a área de transferência!");
+}
+
+function limparCampos() {
+    document.getElementById("tex01").value = "";
+    document.getElementById("tex02").value = "";
+    document.getElementById("resultado").innerText = "";
+    document.getElementById("data").value = "";
+    document.getElementById("dias").value = "";
+}
+
+function converterParaExtenso(numero) {
+    var unidades = ['', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove'];
+    var especiais = ['', 'onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove'];
+    var dezenas = ['', 'dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa'];
+    var centenas = ['', 'cento', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seiscentos', 'setecentos', 'oitocentos', 'novecentos'];
+
+    if (numero === '10') return 'dez';
+
+    var numArray = numero.split('');
+
+    if (numero.length === 1) return unidades[numero];
+    if (numero.length === 2) {
+        if (numero[0] === '1') return especiais[numero[1]];
+        if (numero[1] === '0') return dezenas[numero[0]];
+        return dezenas[numero[0]] + ' e ' + unidades[numero[1]];
+    }
+    if (numero.length === 3) {
+        if (numero[1] === '0' && numero[2] === '0') return centenas[numero[0]];
+        return centenas[numero[0]] + ' e ' + (numero[1] === '0' ? unidades[numero[2]] : dezenas[numero[1]] + ' e ' + unidades[numero[2]]);
+    }
+}
+
+</script>
+
+</body>
+</html>
