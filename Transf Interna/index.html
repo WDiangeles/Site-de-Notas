@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+<title>TRANSFERÊNCIA INTERNA</title>
+</head>
+<body>
+
+<h2>TRANSFERÊNCIA INTERNA</h2>
+
+<label for="tex01">Digite o Nome/Grad./Matrícula:</label>
+<textarea id="tex01" rows="4" cols="50"></textarea><br>
+
+<label for="tex02">Digite a subunidade de origem:</label>
+<textarea id="tex02" rows="4" cols="50"></textarea><br>
+
+<label for="tex03">Digite a subunidade de destino:</label>
+<textarea id="tex03" rows="4" cols="50"></textarea><br>
+
+<button onclick="gerarTexto()">Gerar Texto</button>
+<button onclick="copiarTexto()">Copiar Texto</button>
+<button onclick="limparCampos()">Limpar Campos</button>
+
+<p id="resultado"></p>
+
+<script>
+function gerarTexto() {
+    var texte01 = document.getElementById("tex01").value;
+    var texte02 = document.getElementById("tex02").value;
+    var texte03 = document.getElementById("tex03").value;
+    
+    // Obter a data atual
+    var dataAtual = new Date();
+    var dia = dataAtual.getDate();
+    var mes = dataAtual.getMonth() + 1;
+    var ano = dataAtual.getFullYear();
+
+    // Formatar a data atual para o formato "dd de mês de aaaa"
+    var meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    var dataCorrenteFormatada = dia + ' de ' + meses[mes - 1] + ' de ' + ano;
+    
+    var textoGerado = "O COMANDANTE DO 11º BATALHÃO DE POLÍCIA MILITAR DO ESTADO DA PARAÍBA no exercício de suas competências e com fulcro no art. 134 da Lei Estadual (PB) nº 3.909 de 14 de julho de 1977, que dispõe sobre o 'Estatuto dos Policiais Militares do Estado da Paraíba' c/c art. 23, inciso XVII e XLIX, do Regulamento Interno de Serviço Gerais (RISG) do Exército Brasileiro; e em respeito ao que estabelece o art. 5º, § 1º, item 4., do Regulamento de Movimentação para Oficiais e Praças da PMPB, aprovado pelo Decreto Estadual (PB) nº 9.143 de 08 de setembro de 1981, e inciso XI do art. 5º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, RESOLVE:\n\nTRANSFERIR o " + texte01 + ", do 11ºBPM|" + texte02 + " para o 11ºBPM|" + texte03 + ".\n\nPublique-se. Registre-se. Cumpra-se.\n\nMonteiro-PB, " + dataCorrenteFormatada + ".\n\nComandante do 11º BPM";
+  
+    document.getElementById("resultado").innerText = textoGerado;
+}
+
+function copiarTexto() {
+    var resultado = document.getElementById("resultado");
+    var texto = resultado.innerText;
+
+    // Cria um elemento textarea temporário para copiar o texto
+    var tempTextArea = document.createElement("textarea");
+    tempTextArea.value = texto;
+    document.body.appendChild(tempTextArea);
+
+    // Seleciona o texto no textarea temporário
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); /* Para dispositivos móveis */
+    
+    // Copia o texto selecionado
+    document.execCommand("copy");
+
+    // Remove o textarea temporário
+    document.body.removeChild(tempTextArea);
+
+    // Exibe uma mensagem indicando que o texto foi copiado
+    alert("Texto copiado para a área de transferência!");
+}
+
+function limparCampos() {
+    document.getElementById("tex01").value = "";
+    document.getElementById("tex02").value = "";
+    document.getElementById("tex03").value = "";
+    document.getElementById("resultado").innerText = "";
+}
+
+</script>
+
+</body>
+</html>
