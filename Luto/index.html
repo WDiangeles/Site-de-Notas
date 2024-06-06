@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+<title>CONCESSÃO LICENÇA LUTO</title>
+</head>
+<body>
+
+<h2>CONCESSÃO LICENÇA LUTO</h2>
+
+<label for="tex01">Digite o Nome/Grad./Matrícula:</label>
+<textarea id="tex01" rows="4" cols="50"></textarea><br>
+
+<label for="tex02">Digite a subunidade:</label>
+<textarea id="tex02" rows="4" cols="50"></textarea><br>
+
+
+<label for="opcao">parentesco:</label>
+<select id="opcao">
+  <option value="Genitor">Genitor(a)</option>
+  <option value="Filho(a)">Filho(a)</option>
+  <option value="Filho(a)">Sogro(a)</option>
+  <option value="Filho(a)">Esposa</option>    
+</select><br>
+
+<label for="tex03">Nome do falecido(a):</label>
+<textarea id="tex03" rows="4" cols="50"></textarea><br>
+
+<label for="data">Data de início:</label>
+<input type="date" id="data"><br>
+
+<label for="tex04">Digite o número da Certidão de óbito:</label>
+<textarea id="tex04" rows="4" cols="50"></textarea><br>
+
+<label for="tex05">Digite o local do cartório:</label>
+<textarea id="tex05" rows="4" cols="50"></textarea><br>
+
+<label for="dias">Digite 08 para dispensa de luto:</label>
+<input type="text" id="dias" placeholder="Ex: 8"><br>
+
+
+<button onclick="gerarTexto()">Gerar Texto</button>
+<button onclick="copiarTexto()">Copiar Texto</button>
+<button onclick="limparCampos()">Limpar Campos</button>
+
+<p id="resultado"></p>
+
+<script>
+function gerarTexto() {
+    var texte01 = document.getElementById("tex01").value;
+    var texte02 = document.getElementById("tex02").value;
+    var opcao = document.getElementById("opcao").value;
+    var texte03 = document.getElementById("tex03").value;
+    var dataInicio = document.getElementById("data").value;
+    var texte04 = document.getElementById("tex04").value;
+    var texte05 = document.getElementById("tex05").value;
+    var dias = parseInt(document.getElementById("dias").value);
+
+    
+    var dataInicioObj = new Date(dataInicio);
+    var dataTermino = new Date(dataInicioObj);
+    dataTermino.setDate(dataTermino.getDate() + dias);
+    
+    var dataApresentacao = new Date(dataTermino);
+    dataApresentacao.setDate(dataApresentacao.getDate() + 1); // Adicionando um dia à data de término para a data de apresentação
+
+    var diaTermino = dataTermino.getDate().toString().padStart(2, '0');
+    var mesTermino = (dataTermino.getMonth() + 1).toString().padStart(2, '0');
+    var anoTermino = dataTermino.getFullYear();
+    var dataTerminoFormatada = diaTermino + '/' + mesTermino + '/' + anoTermino;
+
+    var diaApresentacao = dataApresentacao.getDate().toString().padStart(2, '0');
+    var mesApresentacao = (dataApresentacao.getMonth() + 1).toString().padStart(2, '0');
+    var anoApresentacao = dataApresentacao.getFullYear();
+    var dataApresentacaoFormatada = diaApresentacao + '/' + mesApresentacao + '/' + anoApresentacao; // Formatação da data de apresentação
+
+    var dataCorrenteFormatada = obterDataCorrenteFormatada();
+    var diasPorExtenso = converterParaExtenso(dias.toString());
+
+    var textoGerado = "O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “e”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o item II do Art. 62 da LEI No. 3.909, de 14 de julho de 1977 e a alínea “d”, inciso XV do Art. 23, do Regulamento Interno e dos Serviços Gerais – R-1 (Risg), RESOLVE:\n\nREGISTRAR a concessão de " + dias + " (" + diasPorExtenso + ") dia(s) de LUTO, ao militar " + texte01 + "/Unidade: 11º BPM|" + texte02 + ", pelo falecimento de seu " + (opcao === 'DASAS' ? 'sua filha' : 'seu filho') + " , conforme cópia de Certidão de Óbito matrícula: " + texte03 + ", emitida pelo Cartório de registro civil de pessoas naturais, de " + texte04 + ", apresentada e arquivado na Seção de Gestão de Pessoas – P/1, desta Uop.\n\nInício: " + dataInicio.split("-").reverse().join("/") + ";\nTermino: " + dataTerminoFormatada + ";\nApresentação: " + dataApresentacaoFormatada + ".\n\nPUBLIQUE-SE.\n\nMonteiro-PB, " + dataCorrenteFormatada + ".\n\nMarcos Antônio ANASTÁCIO de Sousa - 2º TEN PM\nChefe da Seção de Gestão de Pessoas - 11º BPM";
+
+    document.getElementById("resultado").innerText = textoGerado;
+}
+
+function obterDataCorrenteFormatada() {
+    var dataAtual = new Date();
+    var dia = dataAtual.getDate();
+    var mes = dataAtual.getMonth() + 1;
+    var ano = dataAtual.getFullYear();
+    var meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    return dia + ' de ' + meses[mes - 1] + ' de ' + ano;
+}
+
+function converterParaExtenso(numero) {
+    var unidades = ['', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove'];
+    var especiais = ['', 'onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove'];
+    var dezenas = ['', 'dez', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa'];
+    var centenas = ['', 'cento', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seiscentos', 'setecentos', 'oitocentos', 'novecentos'];
+
+    if (numero === '10') return 'dez';
+    if (numero.length === 1) return unidades[parseInt(numero)];
+    if (numero.length === 2) {
+        if (numero[0] === '1' && numero[1] !== '0') return especiais[parseInt(numero[1])];
+        if (numero[1] === '0') return dezenas[parseInt(numero[0])];
+        return dezenas[parseInt(numero[0])] + ' e ' + unidades[parseInt(numero[1])];
+    }
+    if (numero.length === 3) {
+        if (numero[1] === '0' && numero[2] === '0') return centenas[parseInt(numero[0])] + (numero[0] === '1' ? '' : 's');
+        return centenas[parseInt(numero[0])] + ' e ' + (numero[1] === '0' ? unidades[parseInt(numero[2])] : dezenas[parseInt(numero[1])] + ' e ' + unidades[parseInt(numero[2])]);
+    }
+    return numero; // Caso o número seja maior que 999
+}
+</script>
+
+</body>
+</html>
