@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+<title>Texto para remessa de ofício no PBDoc para outra Unidade:</title>
+</head>
+<body>
+
+<h2>Texto para remessa de ofício no PBDoc para outra Unidade:</h2>
+
+<label for="texte01">Número do Ofício de requisição:</label>
+<textarea id="texte01" rows="4" cols="50"></textarea><br>
+
+<label for="data02">Data da confecção do ofício recebido:</label>
+<input type="date" id="data02"><br><br>
+
+<label for="texte02">Digite a Vara e Comarca:</label>
+<textarea id="texte02" rows="4" cols="50"></textarea><br>
+
+<label for="texte03">Digite a Graduação, Matrícula e Nome do Militar:</label>
+<textarea id="texte03" rows="4" cols="50"></textarea><br>
+
+<label for="data">Data para a Audiência:</label>
+<input type="date" id="data"><br>
+
+<label for="hora">Horário da Audiência:</label>
+<input type="time" id="hora" value="08:00"><br><br>
+
+<label for="texte04">Número do Processo:</label>
+<textarea id="texte04" rows="4" cols="50"></textarea><br>
+
+<label for="aceitar">Modo de audiência:</label>
+<select id="aceitar">
+  <option value="presencial">presencial</option>
+  <option value="semipresencial">semipresencial</option>
+</select><br><br>
+
+<button onclick="gerarTexto()">Gerar Texto</button>
+<button onclick="copiarTexto()">Copiar Texto</button>
+
+<p id="resultado"></p>
+
+<script>
+function gerarTexto() {
+    var texte01 = document.getElementById("texte01").value;
+	var data02 = document.getElementById("data02").value;
+    var texte02 = document.getElementById("texte02").value;
+    var texte03 = document.getElementById("texte03").value;
+    var texte04 = document.getElementById("texte04").value;
+    var data = document.getElementById("data").value;
+    var hora = document.getElementById("hora").value;
+    var aceitar = document.getElementById("aceitar").value;
+
+
+    // Formata a data para o formato "dd/mm/aaaa"
+    var dataFormatada = data.split("-").reverse().join("/");
+    var dataFormatada02 = data02.split("-").reverse().join("/");
+
+    // Extrai as horas e minutos
+    var horaFormatada = hora.replace(":", "hs") + "min";
+
+    var textoGerado = "Remessa de ofício requisitando apresentação de militares em juízo:   em " + dataFormatada + ", às " + horaFormatada + ",\n\n Senhor Comandante\n\nPor ordem do Sr. MAJ Saulo TAVARES da Silva, Comandante do 11º BPM, venho por meio do presente expediente administrativo encaminhar a Vossa Senhoria, o ofício nº: " + texte01 + ", datado de " + dataFormatada02 + ", expedido pela " + texte02 + ", atinente à requisição de apresentação dos militares: (" + texte03 + "), para participar(em) de audiência, designada para o dia " + dataFormatada + ", às " + horaFormatada + ", nos autos do Processo nº.: " + texte04 + ", na modalidade " + aceitar + ".";
+    
+    document.getElementById("resultado").innerText = textoGerado;
+}
+
+function copiarTexto() {
+    var resultado = document.getElementById("resultado");
+    var texto = resultado.innerText;
+
+    // Cria um elemento textarea temporário para copiar o texto
+    var tempTextArea = document.createElement("textarea");
+    tempTextArea.value = texto;
+    document.body.appendChild(tempTextArea);
+
+    // Seleciona o texto no textarea temporário
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); /* Para dispositivos móveis */
+
+    // Copia o texto selecionado
+    document.execCommand("copy");
+
+    // Remove o textarea temporário
+    document.body.removeChild(tempTextArea);
+
+    // Exibe uma mensagem indicando que o texto foi copiado
+    alert("Texto copiado para a área de transferência!");
+}
+
+// Função para gerar uma data aleatória entre 01/06/2024 e 30/06/2024 para o campo "data"
+function gerarDataAleatoria() {
+    var inicio = new Date('2024-06-01').getTime();
+    var fim = new Date('2024-06-30').getTime();
+    var dataAleatoria = new Date(inicio + Math.random() * (fim - inicio));
+    var dia = dataAleatoria.getDate().toString().padStart(2, '0');
+    var mes = (dataAleatoria.getMonth() + 1).toString().padStart(2, '0');
+    var ano = dataAleatoria.getFullYear();
+    return dia + '/' + mes + '/' + ano;
+}
+
+// Define a data aleatória para o campo de data
+document.getElementById('data').value = gerarDataAleatoria();
+</script>
+
+</body>
+</html>
