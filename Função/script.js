@@ -30,7 +30,7 @@ PUBLIQUE-SE. REGISTRE-SE. CUMPRA-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}. 
 
-Humberto GERMANO Leite  - TC QOC 
+Saulo TAVARES da Silva – MAJ QOC
 Comandante do 11º BPM`;  
 
     const paragrafos = textoGerado.split('\n');
@@ -93,7 +93,7 @@ PUBLIQUE-SE. REGISTRE-SE. CUMPRA-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}. 
 
-Humberto GERMANO Leite  - TC QOC 
+Saulo TAVARES da Silva – MAJ QOC
 Comandante do 11º BPM`;  
 
     const paragrafos2 = textoGerado2.split('\n');
