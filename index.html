@@ -3,157 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porte de Arma de Fogo e Munição</title>
-    <script>
-        // Obter a data atual
-        var dataAtual = new Date();
-        var dia = dataAtual.getDate();
-        var mes = dataAtual.getMonth() + 1;
-        var ano = dataAtual.getFullYear();
-
-        // Formatar a data atual para o formato "dd de mês de aaaa"
-        var meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
-        var dataCorrenteFormatada = dia + ' de ' + meses[mes - 1] + ' de ' + ano;
-
-        function copiarTexto() {
-            var resultado = document.getElementById("resultado");
-            var texto = resultado.innerText;
-
-            // Cria um elemento textarea temporário para copiar o texto
-            var tempTextArea = document.createElement("textarea");
-            tempTextArea.value = texto;
-            document.body.appendChild(tempTextArea);
-
-            // Seleciona o texto no textarea temporário
-            tempTextArea.select();
-            tempTextArea.setSelectionRange(0, 99999); /* Para dispositivos móveis */
-
-            // Copia o texto selecionado
-            document.execCommand("copy");
-
-            // Remove o textarea temporário
-            document.body.removeChild(tempTextArea);
-
-            // Exibe uma mensagem indicando que o texto foi copiado
-            alert("Texto copiado para a área de transferência!");
-        }
-
-        function limparCampos() {
-            for (var i = 1; i <= 12; i++) {
-                document.getElementById("tex" + String(i).padStart(2, '0')).value = "";
-            }
-            for (var i = 1; i <= 3; i++) {
-                document.getElementById("dataInspecao" + i).value = "";
-            }
-            document.getElementById("resultado").innerText = "";
-        }
-
-        function gerarTexto() {
-            var texto01 = document.getElementById("tex01").value;
-            var texto02 = document.getElementById("tex02").value;
-            var texto03 = document.getElementById("tex03").value;
-            var texto04 = document.getElementById("tex04").value;
-            var texto05 = document.getElementById("tex05").value;
-            var texto06 = document.getElementById("tex06").value;
-            var texto07 = document.getElementById("tex07").value;
-            var texto08 = document.getElementById("tex08").value;
-            var texto09 = document.getElementById("tex09").value;
-            var texto10 = document.getElementById("tex10").value;
-            var texto11 = document.getElementById("tex11").value;
-            var texto12 = document.getElementById("tex12").value;
-            var texto13 = document.getElementById("dataInspecao1").value;
-            var texto14 = document.getElementById("dataInspecao2").value;
-            var texto15 = document.getElementById("dataInspecao3").value;
-            var validade = document.getElementById("tex16").value;
-
-            var textoGerado = 'PORTE DE ARMA DE FOGO E MUNIÇÃO INSTITUCIONAL\n\n' +
-                'O COMANDANTE DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA, com fundamento no que dispõe o art. 6, inc. II e §1º, da Lei Federal (LF) nº 10.826 de 2003 (estatuto do desarmamento) e arrimado nos mandamentos insculpidos no art. 53, §5º, do Decreto Federal nº 11.615 de 2023 que regulamentou a LF nº 10.826 de 2003 c/c o teor do art. 52, da Resolução nº GCG/0006/2012-CG emitida pelo Exmº Sr. Comandante-Geral da PMPB e publicada no boletim interno do Quartel do Comando Geral (QCG) nº 0143 de 2012, RESOLVE:\n\n' +
-                'Autorizar o porte de arma de fogo e munição institucional para o servidor militar ' + texto01 + '.\n\n' +
-                'Descrição do termo e da arma de fogo:\n' +
-                'I   - Número do termo: ' + texto02 + '\n' +
-                'II  - Validade: ' + validade + '\n' +
-                'III - tipo/modelo: ' + texto03 + '\n' +
-                'IV  - fabricante/acabamento: ' + texto04 + '\n' +
-                'V   - calibre: ' + texto05 + '\n' +
-                'VI  - número de série da arma: ' + texto06 + '\n\n' +
-                'Descrição da munição:\n' +
-                'I   - número de série: ' + texto07 + '\n' +
-                'II  - Marca: ' + texto08 + '\n' +
-                'III - Calibre: ' + texto09 + '\n' +
-                'IV  - Quantidade de munições: ' + texto10 + '\n' +
-                'V   - Lote: ' + texto11 + '\n' +
-                'VI  - Quantidade de carregadores: ' + texto12 + '\n\n' +
-                'Com relação à mencionada arma de fogo e munição institucional, o policial militar responsável pela cautela deve:\n' +
-                'I   – portá-la, fora de serviço, de maneira discreta e não ostensiva, visando evitar constrangimento a terceiros;\n' +
-                'II  – submetê-la a inspeção pelo Chefe do Setor de Armamento e Munição (SAM) do 11º BPM nas seguintes datas: ' + texto13 + ', ' + texto14 + ' e ' + texto15 + '.\n' +
-                'III – devolvê-la no SAM/11º BPM, no prazo de 48h (quarenta e oito horas), quando for transferido/movimentado para outra OPM ou quando for agregado por qualquer hipótese.\n' +
-                'IV  – providenciar, no prazo de 24h (vinte e quatro horas) a partir da perda (roubo/furto/extravio), a lavratura de Boletim Ocorrência e a comunicação do fato à autoridade a que estiver subordinado, formalmente, anexando o Termo de Cautela de Arma de Fogo e Munição.\n\n' +
-                'Esta autorização tem validade de 1(um) ano, a partir de sua expedição.\n\n' +
-                'Monteiro - PB, ' + dataCorrenteFormatada + '\n\n' +
-                'Saulo TAVARES da Silva - MAJ QOC\n' +
-                'Comandante do 11º BPM';
-
-            document.getElementById("resultado").innerText = textoGerado;
-        }
-    </script>
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Porte de Arma de Fogo e Munição</h1>
+
+    <header>
+        <!-- Conteúdo do cabeçalho, como logo, menu de navegação, etc. -->
+        <h1>MODELOS DE NOTAS PARA PUBLICAÇÃO EM BOLETIM INTERNO</h1>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <!-- Conteúdo da barra lateral -->
+            <h2>Notas</h2>
+            <ul>
+                <li><a  src="./Juizo/index.html" onclick="carregarPagina('./Juizo/index.html')">Apresentação em juízo</a></li>
+                 <li><a  href="#" onclick="carregarPagina('#')">Apr. Local de Trab.</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Atestado Médico</a></li>
+                 <li><a  src="./Ferias/index.html" onclick="carregarPagina('./Ferias/index.html')">Férias</a></li>
+                <li><a  src="./Função/index.html" href="#" onclick="carregarPagina('./Função/index.html')">Funções</a></li>
+                <li><a  src="./Motorista/index.html" onclick="carregarPagina('./Motorista/index.html')">Motoristas</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Permuta de Serviço</a></li>
+                 <li><a href="#" onclick="carregarPagina('#')">Transferência interna</a></li>
+                <li><a href="#" onclick="carregarPagina('#')">Calcular Períodos</a></li>
+
+
+                <li><a href="https://alpha01abs.github.io/CalcularDatas/" onclick="carregarPagina('https://alpha01abs.github.io/CalcularDatas/')">Calculadora de datas</a></li>
+            </ul>
+        </aside>
+
+        <section class="main-section">
+            <!-- Conteúdo principal da página -->
+            <h2>Escolha uma nota no menu ao lado</h2>
+            <p>Este site foi criado pelos membros da P/1 do 11º BPM</p>
+
+            <div id="iframeContainer"></div>
+        </section>
+    </div>
+
+     <script>
+    function carregarPagina(url) {
+        const iframeContainer = document.getElementById('iframeContainer');
+        const iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.width = '100%';
+        iframe.height = '600px'; // Ajuste conforme necessário
+
+        // Limpa o conteúdo anterior
+        iframeContainer.innerHTML = '';
+
+        // Adiciona o novo iframe ao contêiner
+        iframeContainer.appendChild(iframe);
+    }
+    </script>
+
     
-    <label for="tex01">Nome e Graduação do Militar:</label>
-    <input type="text" id="tex01" placeholder="Ex: CABO QPC Matr: 523051-9 GLAUBER LUIZ PEREIRA COSTA"><br>
-	
-	<label for="tex02">Número do Termo:</label>
-    <input type="text" id="tex02" placeholder="Ex: 003/2024"><br>
 
-    <label for="tex16">Validade:</label>
-    <input type="text" id="tex16" placeholder="Ex: 29/10/2026"><br>
+   
 
-    <label for="tex03">Tipo/Modelo da Arma:</label>
-    <input type="text" id="tex03" placeholder="Ex: PISTOLA - PT100"><br>
-
-    <label for="tex04">Fabricante/Acabamento:</label>
-    <input type="text" id="tex04" placeholder="Ex: TAURUS - OXIDADO"><br>
-
-    <label for="tex05">Calibre:</label>
-    <input type="text" id="tex05" placeholder="Ex: .40"><br>
-
-    <label for="tex06">Número de Série da arma:</label>
-    <input type="text" id="tex06" placeholder="Ex: STD 00031"><br>
-
-    <label for="tex07">Número de Série da Munição:</label>
-    <input type="text" id="tex07" placeholder="Ex: STD 00031"><br>
-
-    <label for="tex08">Marca da Munição:</label>
-    <input type="text" id="tex08" placeholder="Ex: CBC"><br>
-
-    <label for="tex09">Calibre da Munição:</label>
-    <input type="text" id="tex09" placeholder="Ex: .40"><br>
-
-    <label for="tex10">Quantidade de Munições:</label>
-    <input type="text" id="tex10" placeholder="Ex: 30"><br>
-
-    <label for="tex11">Lote:</label>
-    <input type="text" id="tex11" placeholder="Ex: ATX 45"><br>
-
-    <label for="tex12">Quantidade de Carregadores:</label>
-    <input type="text" id="tex12" placeholder="Ex: 03"><br>
-
-    <h2>Datas de Inspeção:</h2>
-    <label for="dataInspecao1">Data de Inspeção 1:</label>
-    <input type="text" id="dataInspecao1" placeholder="Ex: 13 a 20 de janeiro de 2025"><br>
-
-    <label for="dataInspecao2">Data de Inspeção 2:</label>
-    <input type="text" id="dataInspecao2" placeholder="Ex: 13 a 20 de abril de 2025"><br>
-
-    <label for="dataInspecao3">Data de Inspeção 3:</label>
-    <input type="text" id="dataInspecao3" placeholder="Ex: 13 a 20 de julho de 2025"><br>
-
-    <button onclick="gerarTexto()">Gerar Texto</button>
-    <button onclick="copiarTexto()">Copiar Texto</button>
-    <button onclick="limparCampos()">Limpar Campos</button>
-
-    <h2>Resultado:</h2>
-    <pre id="resultado"></pre>
 </body>
 </html>
