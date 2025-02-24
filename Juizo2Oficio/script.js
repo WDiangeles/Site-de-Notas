@@ -113,7 +113,7 @@ console.log(dataFormatada); // Saída: 01/04/2024
 
 
     const textoGerado = `
-	O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “q”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o art. 134 da Lei Estadual (PB) nº 3.909 de 14 de julho de 1977, que dispõe sobre o “Estatuto dos Policiais Militares do Estado da Paraíba”, RESOLVE: \n
+	O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “q”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o art. 134 da Lei Estadual (PB) nº 3.909 de 14 de julho de 1977, que dispõe sobre o “Estatuto dos Policiais Militares do Estado da Paraíba”, RESOLVE:
 
 REGISTRAR, que o(a) Exmo.(a) Sr.(a) Juiz(a) de Direito da ${varaSelecionada}${outraVaraInput.value}, solicita a apresentação do(s) Militar(es) Estadual(is) abaixo relacionado(s) a fim de participar(em) da audiência, que acontecerá no dia ${dataAudienciaFormatada}, às ${horaFormatada}, na sala de audiências, por meio de videoconferência através da plataforma ZOOM, referente aos autos do Processo nº.: ${numProcesso}, tendo como réu: ${nomeReu}.
 
@@ -126,7 +126,7 @@ PUBLIQUE-SE. \n Monteiro-PB, ${dataEmissaoFormatada}.
 Marcos Antônio ANASTÁCIO de Sousa – 2º TEN PM \n Chefe da Seção de Gestão de Pessoas do 11º BPM`;
  
 
-    
+    const paragrafos = textoGerado.split('\n');
     const textoFormatado = paragrafos.map(paragrafo => `<p style="text-align:justify";>${paragrafo}</p>`).join('');
    
     const botaoCopiar = document.getElementById('botaoCopiar');
