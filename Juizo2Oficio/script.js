@@ -117,16 +117,14 @@ console.log(dataFormatada); // Saída: 01/04/2024
 
 REGISTRAR, que o(a) Exmo.(a) Sr.(a) Juiz(a) de Direito da ${varaSelecionada}${outraVaraInput.value}, solicita a apresentação do(s) Militar(es) Estadual(is) abaixo relacionado(s) a fim de participar(em) da audiência, que acontecerá no dia ${dataAudienciaFormatada}, às ${horaFormatada}, na sala de audiências, por meio de videoconferência através da plataforma ZOOM, referente aos autos do Processo nº.: ${numProcesso}, tendo como réu: ${nomeReu}.
 
-${linkAudiencia}
-Telefone para contato: ${telefoneContato}
+${linkAudiencia}\n Telefone para contato: ${telefoneContato}
 
-(REQUISIÇÃO: OFÍCIO Nº ${numOficio}/2024 – ${varaSelecionada}${outraVaraInput.value}, de ${dataOficioFormatada}).
+(REQUISIÇÃO: OFÍCIO Nº ${numOficio}/${anoEmissao} – ${varaSelecionada}${outraVaraInput.value}, de ${dataOficioFormatada}).
 
 PUBLIQUE-SE.
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa – 2 TEN PM
-Chefe da Seção de Gestão de Pessoas do 11º BPM`;
+Marcos Antônio ANASTÁCIO de Sousa – 2 TEN PM\n Chefe da Seção de Gestão de Pessoas do 11º BPM`;
  
 
     const paragrafos = textoGerado.split('\n');
