@@ -119,12 +119,11 @@ REGISTRAR, que o(a) Exmo.(a) Sr.(a) Juiz(a) de Direito da ${varaSelecionada}${ou
 
 ${linkAudiencia}\n Telefone para contato: ${telefoneContato}
 
-(REQUISIÇÃO: OFÍCIO Nº ${numOficio}/${anoEmissao} – ${varaSelecionada}${outraVaraInput.value}, de ${dataOficioFormatada}).
+(REQUISIÇÃO: OFÍCIO Nº ${numOficio} – ${varaSelecionada}${outraVaraInput.value}, de ${dataOficioFormatada}).
 
-PUBLIQUE-SE.
-Monteiro-PB, ${dataEmissaoFormatada}.
+PUBLIQUE-SE. \n Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa – 2 TEN PM\n Chefe da Seção de Gestão de Pessoas do 11º BPM`;
+Marcos Antônio ANASTÁCIO de Sousa – 2º TEN PM \n Chefe da Seção de Gestão de Pessoas do 11º BPM`;
  
 
     const paragrafos = textoGerado.split('\n');
