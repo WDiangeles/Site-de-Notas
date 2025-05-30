@@ -117,7 +117,7 @@ console.log(dataFormatada); // Saída: 01/04/2024
 
 REGISTRAR, que o(a) Exmo.(a) Sr.(a) Juiz(a) de Direito da ${varaSelecionada}${outraVaraInput.value}, solicita a apresentação do(s) Militar(es) Estadual(is) abaixo relacionado(s) a fim de participar(em) da audiência, que acontecerá no dia ${dataAudienciaFormatada}, às ${horaFormatada}, na sala de audiências. \r\n O(s) militar(es) requisitado(s) deverão se apresentar ao respectivo Comandante de Subunidade a fim de retirar o ofício de apresentação em juízo e seus anexos para demais informações.
 
-${linkAudiencia}\n Telefone para contato: ${telefoneContato}
+\n Telefone para contato: ${telefoneContato}
 
 (REQUISIÇÃO: OFÍCIO Nº ${numOficio} – ${varaSelecionada}${outraVaraInput.value}, de ${dataOficioFormatada}).
 
