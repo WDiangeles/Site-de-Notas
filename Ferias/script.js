@@ -160,7 +160,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Humberto GERMANO Leite  - TC QOC 
+Saulo TAVARES da Silva - MAJ QOC
 Comandante do 11º BPM`;
             break;
         case "Apresentacão":
