@@ -164,7 +164,7 @@ Humberto GERMANO Leite  - TC QOC
 Comandante do 11º BPM`;
             break;
         case "Apresentacão":
-            textoGerado = `O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “r”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o art. 134 da Lei Estadual (PB) nº 3.909 de 14 de julho de 1977, que dispõe sobre o “Estatuto dos Policiais Militares do Estado da Paraíba”, c/c o art. 442, art. 443, § 3º, art. 445 e art. 449, caput, do Regulamento Interno de Serviço Gerais (RISG) do Exército Brasileiro, RESOLVE:
+            textoGerado = `O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “o”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o art. 134 da Lei Estadual (PB) nº 3.909 de 14 de julho de 1977, que dispõe sobre o “Estatuto dos Policiais Militares do Estado da Paraíba”, c/c o art. 442, art. 443, § 3º, art. 445 e art. 449, caput, do Regulamento Interno de Serviço Gerais (RISG) do Exército Brasileiro, RESOLVE:
 
 REGISTRAR que os militares abaixo relacionados se apresentaram nesta UOp pronto para o serviço, em ${startDateFormatada}, após o gozo de ${duration} (${numeroExtenso}) dias de Férias, referente ao EXERCÍCIO ${exercicio}, conforme a publicação contida no Bol. nº ${bolConcessao} CPR I.
 
