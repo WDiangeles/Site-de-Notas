@@ -172,7 +172,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa - 2º TEN PM 
+Marcos Antônio ANASTÁCIO de Sousa - 1º TEN PM 
 Chefe da Seção de Gestão de Pessoas - 11º BPM`;
             break;
         case "Sustacão":
@@ -184,7 +184,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}. 
 
-Marcos Antônio ANASTÁCIO de Sousa - 2º TEN PM
+Marcos Antônio ANASTÁCIO de Sousa - 1º TEN PM
 Chefe da Seção de Gestão de Pessoas do 11º BPM`;
             break;
         case "Sustadas":
@@ -202,7 +202,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa – 2ª TEN PM
+Marcos Antônio ANASTÁCIO de Sousa – 1ª TEN PM
 Chefe da Seção de Gestão de Pessoas do 11º BPM`;
             break;
         default:
@@ -262,3 +262,4 @@ Chefe da Seção de Gestão de Pessoas do 11º BPM`;
     document.getElementById("textoGerado").innerText = textoGerado;
     document.getElementById("result").style.display = "block";
 }
+
