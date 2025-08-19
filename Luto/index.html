@@ -20,10 +20,11 @@
 
 <label for="opcao">parentesco:</label>
 <select id="opcao">
-  <option value="Genitor">Genitor(a)</option>
+  <option value="Genitor(a)">Genitor(a)</option>
   <option value="Filho(a)">Filho(a)</option>
-  <option value="Filho(a)">Sogro(a)</option>
-  <option value="Filho(a)">Esposa</option>    
+  <option value="Sogro(a)">Sogro(a)</option>
+  <option value="Esposa">Esposa</option>
+  <option value="Marido">Marido</option>
 </select><br>
 
 <label for="tex03">Nome do falecido(a):</label>
@@ -80,7 +81,7 @@ function gerarTexto() {
     var dataCorrenteFormatada = obterDataCorrenteFormatada();
     var diasPorExtenso = converterParaExtenso(dias.toString());
 
-    var textoGerado = "O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “e”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o item II do Art. 62 da LEI No. 3.909, de 14 de julho de 1977 e a alínea “d”, inciso XV do Art. 23, do Regulamento Interno e dos Serviços Gerais – R-1 (Risg), RESOLVE:\n\nREGISTRAR a concessão de " + dias + " (" + diasPorExtenso + ") dia(s) de LUTO, ao militar " + texte01 + "/Unidade: 11º BPM|" + texte02 + ", pelo falecimento de seu " + (opcao === 'DASAS' ? 'sua filha' : 'seu filho') + " , conforme cópia de Certidão de Óbito matrícula: " + texte03 + ", emitida pelo Cartório de registro civil de pessoas naturais, de " + texte04 + ", apresentada e arquivado na Seção de Gestão de Pessoas – P/1, desta Uop.\n\nInício: " + dataInicio.split("-").reverse().join("/") + ";\nTermino: " + dataTerminoFormatada + ";\nApresentação: " + dataApresentacaoFormatada + ".\n\nPUBLIQUE-SE.\n\nMonteiro-PB, " + dataCorrenteFormatada + ".\n\nMarcos Antônio ANASTÁCIO de Sousa - 2º TEN PM\nChefe da Seção de Gestão de Pessoas - 11º BPM";
+    var textoGerado = "O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “e”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o item II do Art. 62 da LEI No. 3.909, de 14 de julho de 1977 e a alínea “d”, inciso XV do Art. 23, do Regulamento Interno e dos Serviços Gerais – R-1 (Risg), RESOLVE:\n\nREGISTRAR a concessão de " + dias + " (" + diasPorExtenso + ") dia(s) de LUTO, ao militar " + texte01 + ", Unidade: 11º BPM|" + texte02 + ", pelo falecimento de seu " + (opcao === 'Genitor(a)' : 'Filho(a)' : 'Sogro(a)' : 'Esposa' : 'Marido') + " , " + texte03 + " conforme cópia de Certidão de Óbito matrícula: " + texte03 + ", emitida pelo Cartório de registro civil de pessoas naturais, de " + texte05 + ", apresentada e arquivado na Seção de Gestão de Pessoas – P/1, desta Uop.\n\nInício: " + dataInicio.split("-").reverse().join("/") + ";\nTermino: " + dataTerminoFormatada + ";\nApresentação: " + dataApresentacaoFormatada + ".\n\nPUBLIQUE-SE.\n\nMonteiro-PB, " + dataCorrenteFormatada + ".\n\nMarcos Antônio ANASTÁCIO de Sousa - 2º TEN PM\nChefe da Seção de Gestão de Pessoas - 11º BPM";
 
     document.getElementById("resultado").innerText = textoGerado;
 }
@@ -117,3 +118,4 @@ function converterParaExtenso(numero) {
 
 </body>
 </html>
+
