@@ -123,7 +123,7 @@ REGISTRAR, que o(a) Exmo.(a) Sr.(a) Juiz(a) de Direito da ${varaSelecionada}${ou
 
 PUBLIQUE-SE. \n Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa – 2º TEN PM \r\n Chefe da Seção de Gestão de Pessoas do 11º BPM`;
+Marcos Antônio ANASTÁCIO de Sousa – 1º TEN QGP \r\n Chefe da Seção de Gestão de Pessoas do 11º BPM`;
  
 
     const paragrafos = textoGerado.split('\n');
@@ -179,7 +179,7 @@ Marcos Antônio ANASTÁCIO de Sousa – 2º TEN PM \r\n Chefe da Seção de Gest
 
 
 
-    const textoGerado2 = `Em cumprimento ao teor do ofício nº: ${numOficio}, datado de ${dataOficioFormatada}, expedido pela ${varaSelecionada}${outraVaraInput.value}, e por ordem do Sr. MAJOR Saulo TAVARES Silva, Comandante do 11º BPM, apresento a Vossa Excelência, o(s) militar(es) abaixo referenciado(s), atinente a solicitação para participar(em) de audiência, designada para o dia ${dataAudienciaFormatada}, às ${horaFormatada}, nos autos do Processo nº.: ${numProcesso}.`; 
+    const textoGerado2 = `Em cumprimento ao teor do ofício nº: ${numOficio}, datado de ${dataOficioFormatada}, expedido pela ${varaSelecionada}${outraVaraInput.value}, e por ordem do Sr. TC Saulo TAVARES Silva, Comandante do 11º BPM, apresento a Vossa Excelência, o(s) militar(es) abaixo referenciado(s), atinente a solicitação para participar(em) de audiência, designada para o dia ${dataAudienciaFormatada}, às ${horaFormatada}, nos autos do Processo nº.: ${numProcesso}.`; 
 
     const paragrafos2 = textoGerado2.split('\n');
     const textoFormatado2 = paragrafos2.map(paragrafo => `<p style="text-align:justify";>${paragrafo}</p>`).join('');
@@ -233,3 +233,4 @@ Marcos Antônio ANASTÁCIO de Sousa – 2º TEN PM \r\n Chefe da Seção de Gest
     document.getElementById("textoGerado2").innerHTML = textoFormatado2;
 
 }
+
