@@ -160,7 +160,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Saulo TAVARES da Silva - MAJ QOC
+Saulo TAVARES da Silva - TC QOEM
 Comandante do 11º BPM`;
             break;
         case "Apresentacão":
@@ -172,7 +172,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa - 1º TEN PM 
+Marcos Antônio ANASTÁCIO de Sousa - 1º TEN QGP 
 Chefe da Seção de Gestão de Pessoas - 11º BPM`;
             break;
         case "Sustacão":
@@ -184,7 +184,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}. 
 
-Marcos Antônio ANASTÁCIO de Sousa - 1º TEN PM
+Marcos Antônio ANASTÁCIO de Sousa - 1º TEN QGP
 Chefe da Seção de Gestão de Pessoas do 11º BPM`;
             break;
         case "Sustadas":
@@ -202,7 +202,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa – 1ª TEN PM
+Marcos Antônio ANASTÁCIO de Sousa – 1ª TEN QGP
 Chefe da Seção de Gestão de Pessoas do 11º BPM`;
             break;
         default:
@@ -262,4 +262,5 @@ Chefe da Seção de Gestão de Pessoas do 11º BPM`;
     document.getElementById("textoGerado").innerText = textoGerado;
     document.getElementById("result").style.display = "block";
 }
+
 
