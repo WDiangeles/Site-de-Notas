@@ -112,8 +112,8 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa – 1º TEN PM
-Chefe da Seção de Gestão de Pessoas do 11º BPM`;  
+João EDSON da Silva Feitosa – 1º TEN QOE
+Chefe da Seção de Gestão de Pessoas - 11º BPM`;  
 
     const paragrafos = textoGerado.split('\n');
     const textoFormatado = paragrafos.map(paragrafo => `<p style="text-align:justify";>${paragrafo}</p>`).join('');
@@ -168,3 +168,4 @@ Chefe da Seção de Gestão de Pessoas do 11º BPM`;
 
 
 }
+
