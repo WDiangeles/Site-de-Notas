@@ -172,7 +172,7 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa - 1º TEN QGP 
+João EDSON da Silva Feitosa – 1º TEN QOE
 Chefe da Seção de Gestão de Pessoas - 11º BPM`;
             break;
         case "Sustacão":
@@ -184,8 +184,8 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}. 
 
-Marcos Antônio ANASTÁCIO de Sousa - 1º TEN QGP
-Chefe da Seção de Gestão de Pessoas do 11º BPM`;
+João EDSON da Silva Feitosa – 1º TEN QOE
+Chefe da Seção de Gestão de Pessoas - 11º BPM`;
             break;
         case "Sustadas":
             textoGerado = `O CHEFE DA SEÇÃO DE GESTÃO DE PESSOAS (P/1) DO 11º BATALHÃO DE POLÍCIA MILITAR DA PARAÍBA no exercício das competências que lhe foram delegadas pelo Comandante desta Unidade Operacional através da alínea “g”, inciso III do art. 8º da NORMA GERAL DE AÇÃO - NGA Nº 001/2023-GC/11º BPM publicada no Boletim do CPR I nº 0041 de 01/03/2023, em conformidade com o art. 134 da Lei Estadual (PB) nº 3.909 de 14 de julho de 1977, que dispõe sobre o “Estatuto dos Policiais Militares do Estado da Paraíba”, RESOLVE:
@@ -202,8 +202,8 @@ PUBLIQUE-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa – 1ª TEN QGP
-Chefe da Seção de Gestão de Pessoas do 11º BPM`;
+João EDSON da Silva Feitosa – 1º TEN QOE
+Chefe da Seção de Gestão de Pessoas - 11º BPM`;
             break;
         default:
             textoGerado = "Por favor, selecione um tipo válido.";
@@ -262,5 +262,6 @@ Chefe da Seção de Gestão de Pessoas do 11º BPM`;
     document.getElementById("textoGerado").innerText = textoGerado;
     document.getElementById("result").style.display = "block";
 }
+
 
 
