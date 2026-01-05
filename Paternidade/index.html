@@ -78,7 +78,7 @@ function gerarTexto() {
     var dataCorrenteFormatada = obterDataCorrenteFormatada();
     var diasPorExtenso = converterParaExtenso(dias.toString());
 
-    var textoGerado = "CONCEDER, ao militar " + texte01 + ", lotado no 11º BPM|" + texte02 + ", " + dias + " (" + diasPorExtenso + ") dia(s) de Licença Paternidade, pelo nascimento de " + (opcao === 'DASAS' ? 'sua filha' : 'seu filho') + " " + texte03 + ", no dia " + dataInicio.split("-").reverse().join("/") + ", Certidão de Nascimento, matrícula nº " + texte04 + ", expedida pelo Cartório de Registro Civil de " + texte05 + ", conforme cópia recebida e arquivada na Seção de Gestão de Pessoas do 11º BPM.\n\nInício: " + dataInicio.split("-").reverse().join("/") + ";\nTermino: " + dataTerminoFormatada + ";\nApresentação: " + dataApresentacaoFormatada + ".\n\nPUBLIQUE-SE.\n\nMonteiro-PB, " + dataCorrenteFormatada + ".\n\nMarcos Antônio ANASTÁCIO de Sousa - 1º TEN PM\nChefe da Seção de Gestão de Pessoas - 11º BPM";
+    var textoGerado = "CONCEDER, ao militar " + texte01 + ", lotado no 11º BPM|" + texte02 + ", " + dias + " (" + diasPorExtenso + ") dia(s) de Licença Paternidade, pelo nascimento de " + (opcao === 'DASAS' ? 'sua filha' : 'seu filho') + " " + texte03 + ", no dia " + dataInicio.split("-").reverse().join("/") + ", Certidão de Nascimento, matrícula nº " + texte04 + ", expedida pelo Cartório de Registro Civil de " + texte05 + ", conforme cópia recebida e arquivada na Seção de Gestão de Pessoas do 11º BPM.\n\nInício: " + dataInicio.split("-").reverse().join("/") + ";\nTermino: " + dataTerminoFormatada + ";\nApresentação: " + dataApresentacaoFormatada + ".\n\nPUBLIQUE-SE.\n\nMonteiro-PB, " + dataCorrenteFormatada + ".\n\nJoão EDSON da Silva Feitosa – 1º TEN QOE\nChefe da Seção de Gestão de Pessoas - 11º BPM";
 
     document.getElementById("resultado").innerText = textoGerado;
 }
@@ -115,4 +115,5 @@ function converterParaExtenso(numero) {
 
 </body>
 </html>
+
 
