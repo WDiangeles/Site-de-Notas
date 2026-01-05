@@ -30,7 +30,7 @@ PUBLIQUE-SE. REGISTRE-SE. CUMPRA-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Saulo TAVARES da Silva – MAJ QOEM
+Saulo TAVARES da Silva – TC QOEM
 Comandante do 11º BPM`;  
 
     const paragrafos = textoGerado.split('\n');
@@ -93,7 +93,7 @@ PUBLIQUE-SE. REGISTRE-SE. CUMPRA-SE.
 
 Monteiro-PB, ${dataEmissaoFormatada}.
 
-Saulo TAVARES da Silva – MAJ QOEM
+Saulo TAVARES da Silva – TC QOEM
 Comandante do 11º BPM`; 
 
     const paragrafos2 = textoGerado2.split('\n');
@@ -148,4 +148,5 @@ Comandante do 11º BPM`;
     document.getElementById("textoGerado2").innerHTML = textoFormatado2;
 
 }
+
 
