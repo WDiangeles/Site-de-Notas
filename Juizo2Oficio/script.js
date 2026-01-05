@@ -123,7 +123,7 @@ REGISTRAR, que o(a) Exmo.(a) Sr.(a) Juiz(a) de Direito da ${varaSelecionada}${ou
 
 PUBLIQUE-SE. \n Monteiro-PB, ${dataEmissaoFormatada}.
 
-Marcos Antônio ANASTÁCIO de Sousa – 1º TEN QGP \r\n Chefe da Seção de Gestão de Pessoas do 11º BPM`;
+João EDSON da Silva Feitosa – 1º TEN QOE \r\n Chefe da Seção de Gestão de Pessoas do 11º BPM`;
  
 
     const paragrafos = textoGerado.split('\n');
@@ -233,4 +233,5 @@ Marcos Antônio ANASTÁCIO de Sousa – 1º TEN QGP \r\n Chefe da Seção de Ges
     document.getElementById("textoGerado2").innerHTML = textoFormatado2;
 
 }
+
 
