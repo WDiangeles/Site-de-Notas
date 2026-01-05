@@ -62,7 +62,7 @@ function gerarTexto() {
     // Extrai as horas e minutos
     var horaFormatada = hora.replace(":", "hs") + "min";
 
-    var textoGerado = "Remessa de ofício requisitando apresentação de militares em juízo:   em " + dataFormatada + ", às " + horaFormatada + ",\n\n Senhor Comandante\n\nPor ordem do Sr. MAJ Saulo TAVARES da Silva, Comandante do 11º BPM, venho por meio do presente expediente administrativo encaminhar a Vossa Senhoria, o ofício nº: " + texte01 + ", datado de " + dataFormatada02 + ", expedido pela " + texte02 + ", atinente à requisição de apresentação dos militares: (" + texte03 + "), para participar(em) de audiência, designada para o dia " + dataFormatada + ", às " + horaFormatada + ", nos autos do Processo nº.: " + texte04 + ", na modalidade " + aceitar + ".";
+    var textoGerado = "Remessa de ofício requisitando apresentação de militares em juízo:   em " + dataFormatada + ", às " + horaFormatada + ",\n\n Senhor Comandante\n\nPor ordem do Sr. TC Saulo TAVARES da Silva, Comandante do 11º BPM, venho por meio do presente expediente administrativo encaminhar a Vossa Senhoria, o ofício nº: " + texte01 + ", datado de " + dataFormatada02 + ", expedido pela " + texte02 + ", atinente à requisição de apresentação dos militares: (" + texte03 + "), para participar(em) de audiência, designada para o dia " + dataFormatada + ", às " + horaFormatada + ", nos autos do Processo nº.: " + texte04 + ", na modalidade " + aceitar + ".";
     
     document.getElementById("resultado").innerText = textoGerado;
 }
@@ -107,3 +107,4 @@ document.getElementById('data').value = gerarDataAleatoria();
 
 </body>
 </html>
+
